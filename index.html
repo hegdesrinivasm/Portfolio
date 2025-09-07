@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srinivas Hegde M | AIML Student</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/@progress/kendo-theme-material@latest/dist/all.css" />
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* --- Global Styles & Material 3 Expressive Customizations --- */
+        :root {
+            --primary-color: #0071e3; /* Apple Blue */
+            --surface-color: #ffffff;
+            --secondary-surface-color: #f5f5f7;
+            --on-surface-color: #1d1d1f;
+            --text-light: #6e6e73;
+            --border-color: #d2d2d7;
+            --radius-large: 24px;
+            --radius-medium: 18px;
+            --radius-small: 12px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 72px; /* Adjusted for nav height + a little space */
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: var(--surface-color);
+            color: var(--on-surface-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- Navigation Bar --- */
+        .main-nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            z-index: 1000;
+            height: 52px;
+        }
+
+        .nav-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .main-nav a.active, .main-nav a:hover {
+            color: var(--on-surface-color);
+            font-weight: 600;
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .hero-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .hero-text {
+            max-width: 600px;
+            text-align: left;
+        }
+
+        #hero h1 {
+            font-size: 4.2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        #hero .sub-headline {
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin: 10px 0 20px 0;
+        }
+
+        #hero .tagline {
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: var(--on-surface-color);
+        }
+        
+        .hero-image {
+            flex-shrink: 0;
+        }
+
+        .hero-image img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        /* --- About Me Section --- */
+        #about p:first-of-type {
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        #skills {
+            background-color: var(--secondary-surface-color);
+            border-radius: var(--radius-large);
+        }
+
+        #contact {
+            background-color: var(--secondary-surface-color);
+        }
+
+        /* --- Skills Section --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background: rgba(255,255,255,0.6);
+            padding: 30px;
+            border-radius: var(--radius-small);
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-card:hover {
+            background: #fff;
+        }
+
+        .skill-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* --- Awards Section --- */
+        .awards-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .award-item {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .award-item h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+        }
+        .award-item p {
+            margin: 0;
+        }
+        .final-paragraph {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 50px;
+        }
+
+        /* --- Contact Section --- */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: flex-start;
+        }
+        
+        .k-form-field .k-input-fieldset {
+            border-radius: var(--radius-small);
+        }
+
+        .contact-form .k-form-field {
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-small);
+        }
+
+        .contact-details div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-details i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            width: 30px;
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.8rem;
+            margin-right: 20px;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .error-message {
+            color: #d93025;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--secondary-surface-color);
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* --- Responsive Design --- */        
+        /* For tablets and smaller laptops */
+        @media (max-width: 1024px) {
+            #hero h1 {
+                font-size: 3.2rem;
+            }
+            #hero .sub-headline {
+                font-size: 1.4rem;
+            }
+            #hero .tagline {
+                font-size: 1.5rem;
+            }
+            .hero-wrapper {
+                gap: 40px;
+            }
+            .hero-image img {
+                width: 280px;
+                height: 280px;
+            }
+        }
+
+        /* For mobile devices */
+        @media (max-width: 768px) {
+            .main-nav {
+                height: auto;
+            }
+            .nav-content {
+                overflow-x: auto;
+                justify-content: flex-start;
+            }
+            .container {
+                padding: 60px 15px;
+            }
+            #hero {
+                min-height: auto;
+                padding: 120px 20px 60px;
+            }
+            .hero-wrapper {
+                flex-direction: column-reverse;
+                gap: 30px;
+            }
+            .hero-text {
+                text-align: center;
+            }
+            .hero-image img {
+                width: 250px;
+                height: 250px;
+            }
+            #hero h1 {
+                font-size: 3rem;
+            }
+            #hero .sub-headline {
+                font-size: 1.3rem;
+            }
+            #hero .tagline {
+                font-size: 1.4rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="main-nav">
+        <div class="nav-content">
+            <a href="#hero" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#awards">Awards</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="hero-wrapper">
+            <div class="hero-text" data-aos="fade-right">
+                <h1 class="headline">Srinivas Hegde M</h1>
+                <p class="sub-headline">5th Semester AIML Student, VCET Puttur</p>
+                <p class="tagline">Crafting Intelligent Futures with Code. ✨</p>
+            </div>
+            <div class="hero-image" data-aos="fade-left">
+                <img src="https://drive.google.com/uc?id=1t-nwgbHjPF3WOvcMaNmvNQjbAs5xoYJE" alt="A placeholder image for Srinivas Hegde M's profile picture.">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <div data-aos="fade-up">
+            <h2>About Me</h2>
+            <p>As a dedicated <strong>Artificial Intelligence and Machine Learning</strong> student, I am deeply passionate about leveraging technology to solve complex problems. My academic journey is built on a solid foundation in programming with languages like <strong>Python and C</strong>, where I continuously hone my ability to write clean, efficient, and logical code. I am driven by a curiosity to understand the mechanics behind intelligent systems and am committed to translating theoretical knowledge into practical, real-world applications.</p>
+            <p>My focus extends beyond foundational programming into the exciting realm of machine learning. I actively apply my Python skills to develop and train models for both <strong>regression and classification tasks</strong>, turning raw data into meaningful insights. This passion is validated by my certification from Stanford University and Coursera, which has equipped me with a robust understanding of supervised learning techniques. I thrive on the challenge of building solutions that are not only functional but also intelligent and adaptive.</p>
+            <p>Beyond the screen, I cultivate skills that enhance my technical prowess. Proficient <strong>touch typing</strong> allows me to bring ideas to life with speed and accuracy, a critical asset in fast-paced development environments. Furthermore, my training in playing the <strong>Tabla</strong> has instilled a unique sense of discipline, rhythm, and pattern recognition—qualities that I believe are invaluable for creating elegant and harmonious solutions in the world of code.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="container">
+        <h2 data-aos="fade-up">Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-brands fa-python"></i>
+                <h3>Python</h3>
+                <p>Leveraging Python for data analysis, machine learning model development, and backend scripting.</p>
+            </div>
+            <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-code"></i>
+                <h3>C</h3>
+                <p>Building a strong foundation in computer science with C for performance-critical applications.</p>
+            </div>
+            <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fa-solid fa-keyboard"></i>
+                <h3>Touch Typing</h3>
+                <p>Achieving high efficiency and accuracy in coding and documentation through proficient touch typing.</p>
+            </div>
+            <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+                <i class="fa-solid fa-drum"></i>
+                <h3>Playing Tabla</h3>
+                <p>Developing discipline, rhythm, and creative problem-solving through the classical art of Tabla.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards" class="container">
+        <h2 data-aos="fade-up">Awards & Recognition</h2>
+        <div class="awards-list">
+            <div class="award-item" data-aos="fade-left">
+                <h3>Supervised Machine Learning: Regression and Classification</h3>
+                <p>Stanford University & Coursera (in collaboration with DeepLearning.AI)</p>
+            </div>
+            <div class="award-item" data-aos="fade-left" data-aos-delay="100">
+                <h3>Junior & Senior Grade in Drawing</h3>
+                <p>Karnataka State Grade Exam</p>
+            </div>
+            <div class="award-item" data-aos="fade-left" data-aos-delay="200">
+                <h3>Junior Grade in Talavadya Exam</h3>
+                <p>Karnataka Board of Secondary Education</p>
+            </div>
+            <div class="award-item" data-aos="fade-left" data-aos-delay="300">
+                <h3>NCC 'A' Certificate</h3>
+                <p>National Cadet Corps, India</p>
+            </div>
+        </div>
+        <p class="final-paragraph" data-aos="fade-up" data-aos-delay="400">Driven by a passion for rapid innovation and collaborative problem-solving, I am actively seeking to apply my skills in competitive <strong>hackathon environments</strong> to build impactful technology. 🚀</p>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 data-aos="fade-up">Contact Me</h2>
+            <div class="contact-wrapper">
+                <div class="contact-form" data-aos="fade-right">
+                    <form id="main-contact-form">
+                         <div class="k-form-field">
+                            <input id="name" name="name" type="text" required />
+                        </div>
+                         <div class="k-form-field">
+                            <input id="email" name="email" type="email" required />
+                        </div>
+                        <div class="k-form-field">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <div class="k-form-buttons">
+                            <button type="submit" class="k-button k-button-md k-rounded-md k-button-solid-primary">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="contact-details" data-aos="fade-left">
+                    <h3>Get in Touch</h3>
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Suneethi, Near Nisarga Health Center, <br>Darbe, Puttur, 574202</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>hegdesriniavsm@gmail.com</span>
+                    </div>
+                     <div>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 9060159605</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank" aria-label="GitHub Profile">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn Profile">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="copyright-year"></span> Srinivas Hegde M. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2024.1.319/js/kendo.all.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // --- Initialize Kendo UI Components ---
+            $("#name").kendoTextBox({ 
+                fillMode: "outline",
+                label: { content: "Name" }
+            });
+            $("#email").kendoTextBox({ 
+                fillMode: "outline",
+                label: { content: "Email" }
+            });
+            $("#message").kendoTextArea({ 
+                fillMode: "outline", 
+                label: { content: "Message" },
+                rows: 5
+            });
+            $(".k-button").kendoButton({
+                themeColor: 'primary'
+            });
+
+            // --- Initialize AOS (Animate on Scroll) ---
+            AOS.init({
+                duration: 800, // animation duration in milliseconds
+                once: true,     // whether animation should happen only once - while scrolling down
+                offset: 100,    // offset (in px) from the original trigger point
+            });
+
+            // --- Navigation Active State on Scroll (Scrollspy) ---
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.main-nav a');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { threshold: 0.6 }); // Triggers when 60% of the section is visible
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // --- Set Copyright Year ---
+            document.getElementById('copyright-year').textContent = new Date().getFullYear();
+        });
+    </script>
+    <!--Validate form with Javascript -- Display error message below textbox-->
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Clear previous error messages
+            document.querySelectorAll(".error-message").forEach(function(el) {
+                el.remove();
+            });
+
+            // Validate form fields
+            let isValid = true;
+
+            const name = document.getElementById("name");
+            if (!name.value.trim()) {
+                isValid = false;
+                showError(name, "Name is required.");
+            }
+
+            const email = document.getElementById("email");
+            if (!email.value.trim()) {
+                isValid = false;
+                showError(email, "Email is required.");
+            } else if (!isValidEmail(email.value.trim())) {
+                isValid = false;
+                showError(email, "Invalid email format.");
+            }
+
+            const message = document.getElementById("message");
+            if (!message.value.trim()) {
+                isValid = false;
+                showError(message, "Message is required.");
+            }
+
+            if (isValid) {
+                // If the form is valid, you can submit it or perform other actions
+                alert("Form submitted successfully!");
+            }
+        });
+
+        function showError(input, message) {
+            const error = document.createElement("div");
+            error.className = "error-message";
+            error.textContent = message;
+            input.closest('.k-form-field').appendChild(error);
+        }
+
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    </script>
+</body>
+</html>
