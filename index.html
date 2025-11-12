@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Graphik Font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/graphik@5.0.0/index.css">
 
     <style>
         /* --- Global Styles & Material 3 Expressive Customizations --- */
@@ -31,7 +34,7 @@
         }
 
         body {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-family: "Graphik", "Helvetica Neue", Helvetica, Arial, sans-serif;
             background-color: var(--surface-color);
             color: var(--on-surface-color);
             margin: 0;
@@ -196,6 +199,56 @@
             margin-bottom: 10px;
         }
         
+        /* --- Projects Section --- */
+        #projects {
+            background-color: var(--surface-color);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .project-card {
+            background: var(--secondary-surface-color);
+            padding: 30px;
+            border-radius: var(--radius-medium);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .project-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .project-card p {
+            margin-bottom: 20px;
+        }
+        
+        .project-card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: gap 0.3s ease;
+        }
+        
+        .project-card a:hover {
+            gap: 12px;
+        }
+        
         /* --- Awards Section --- */
         .awards-list {
             max-width: 800px;
@@ -355,6 +408,7 @@
             <a href="#hero" class="active">Home</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
             <a href="#awards">Awards</a>
             <a href="#contact">Contact</a>
         </div>
@@ -364,8 +418,8 @@
         <div class="hero-wrapper">
             <div class="hero-text" data-aos="fade-right">
                 <h1 class="headline">Srinivas Hegde M</h1>
-                <p class="sub-headline">5th Semester AIML Student, VCET Puttur</p>
-                <p class="tagline">Crafting Intelligent Futures with Code. ✨</p>
+                <p class="sub-headline">Third Year AIML Student, VCET Puttur</p>
+                <p class="tagline">Passionate about Applied Machine Learning & Deep Learning ✨</p>
             </div>
             <div class="hero-image" data-aos="fade-left">
                 <img src="P1000635.jpg" alt="A placeholder image for Srinivas Hegde M's profile picture.">
@@ -376,49 +430,76 @@
     <section id="about" class="container">
         <div data-aos="fade-up">
             <h2>About Me</h2>
-            <p>Heavily interested in the advancements taking place in the world of <strong>AI, computer science, and technology</strong>. Currently studying third-year BE in AIML, I aspire to be a part of the ever-growing AI community. I am passionate about learning how technology can help us <strong>solve real-world problems</strong>. As a dedicated Artificial Intelligence and Machine Learning student, I am deeply passionate about leveraging technology to solve complex problems.</p>
-            <p>My academic journey is built on a solid foundation in programming with languages like Python and C, where I continuously hone my ability to write clean, efficient, and logical code. I am driven by a curiosity to understand the mechanics behind intelligent systems and am committed to translating theoretical knowledge into practical, real-world applications. I also hope to be a <strong>good public speaker</strong>.</p>
-            <p>I am also interested in <strong>consumer electronics and software</strong> and have been following the space for quite a while now. I like to express my thoughts on them with people around me. I hope to start a podcast on the same in the future.</p>
-            <p>My other hobbies include playing tabla, reading books, video games, watching movies, touch typing and learning new languages.</p>
+            <p>A third year AIML student heavily interested in <strong>applied machine learning and deep learning</strong>. Currently pursuing Bachelor of Engineering in Artificial Intelligence and Machine Learning at Vivekananda College of Engineering & Technology, Puttur (graduating 2027).</p>
+            <p>My academic journey is built on a solid foundation in programming with languages like <strong>Python, C, C++, and Java</strong>. I work extensively with frameworks and libraries including <strong>TensorFlow, PyTorch, Keras, Scikit-Learn</strong>, and tools like <strong>Numpy and Matplotlib</strong> for data analysis and visualization. I continuously hone my ability to write clean, efficient, and logical code.</p>
+            <p>I am driven by a curiosity to understand the mechanics behind intelligent systems and am committed to translating theoretical knowledge into practical, real-world applications. My projects focus on solving real-world problems in areas like speech pathology and placement prediction using AI/ML techniques.</p>
+            <p>Beyond technical skills, I bring strong <strong>problem-solving abilities, leadership, teamwork, and communication</strong> skills. I am an active member of several college organizations including IEEE VCET Student Branch and Center of Research Excellency (CoRE), where I organize and host various events. Currently, I serve as the <strong>Joint Cultural Secretary of Bhoomika Kala Sangha</strong> — VCET's Co-curricular & Extra Curricular Cell.</p>
         </div>
     </section>
 
     <section id="skills" class="container">
-        <h2 data-aos="fade-up">Skills</h2>
+        <h2 data-aos="fade-up">Technical Skills</h2>
         <div class="skills-grid">
             <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
                 <i class="fa-brands fa-python"></i>
-                <h3>Python</h3>
-                <p>Leveraging Python for data analysis, machine learning model development, and backend scripting.</p>
+                <h3>Programming Languages</h3>
+                <p>Python, C, C++, Java, Dart - Building robust applications and solving complex problems.</p>
             </div>
             <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fa-solid fa-code"></i>
-                <h3>C</h3>
-                <p>Building a strong foundation in computer science with C for performance-critical applications.</p>
+                <i class="fa-solid fa-brain"></i>
+                <h3>ML/AI Frameworks</h3>
+                <p>TensorFlow, PyTorch, Keras, Scikit-Learn - Developing and deploying machine learning models.</p>
             </div>
             <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
-                <i class="fa-solid fa-keyboard"></i>
-                <h3>Touch Typing</h3>
-                <p>Achieving high efficiency and accuracy in coding and documentation through proficient touch typing.</p>
+                <i class="fa-solid fa-mobile-screen"></i>
+                <h3>Mobile Development</h3>
+                <p>Flutter & Dart - Creating cross-platform mobile applications with modern UI/UX.</p>
             </div>
             <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
-                <i class="fa-solid fa-drum"></i>
-                <h3>Playing Tabla</h3>
-                <p>Developing discipline, rhythm, and creative problem-solving through the classical art of Tabla.</p>
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>Data Analysis & Tools</h3>
+                <p>Numpy, Matplotlib, Git, GitHub, VS Code, PyCharm - Analyzing data and managing projects efficiently.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2 data-aos="fade-up">Projects & Internships</h2>
+        <div class="projects-grid">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <h3>DADS - Dysfluency Analysis and Detection System</h3>
+                <p>A system which detects and classifies stutter disfluency into five different classes to assist speech pathologists in diagnosis and treatment planning.</p>
+                <a href="https://github.com/hegdesrinivasm/DADS" target="_blank" aria-label="View DADS project on GitHub">
+                    <i class="fa-brands fa-github"></i> View on GitHub <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <h3>ADAS - Articulation Dysfluency Analysis System</h3>
+                <p>A system which analyzes articulation errors by giving a comprehensive report on syllable error, helping speech therapists provide targeted interventions.</p>
+                <a href="https://github.com/hegdesrinivasm/Articulation" target="_blank" aria-label="View ADAS project on GitHub">
+                    <i class="fa-brands fa-github"></i> View on GitHub <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <h3>AI Placement Predictor</h3>
+                <p>A web app which gives candidates a comprehensive placement prediction based on their course certifications, skills known, projects, and internships completed.</p>
+                <a href="https://github.com/hegdesrinivasm/BePractical" target="_blank" aria-label="View AI Placement Predictor project on GitHub">
+                    <i class="fa-brands fa-github"></i> View on GitHub <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <section id="awards" class="container">
-        <h2 data-aos="fade-up">Awards & Recognition</h2>
+        <h2 data-aos="fade-up">Achievements & Certifications</h2>
         <div class="awards-list">
             <div class="award-item" data-aos="fade-left">
-                <h3>Supervised Machine Learning: Regression and Classification</h3>
-                <p>Stanford University & Coursera (in collaboration with DeepLearning.AI)</p>
+                <h3>Machine Learning Specialization - Course Completion</h3>
+                <p>Completed 'Supervised Machine Learning: Regression and Classification' course as a part of the 'Machine Learning Specialization' on Coursera by Stanford University and DeepLearning.AI</p>
             </div>
             <div class="award-item" data-aos="fade-left" data-aos-delay="100">
-                <h3>Junior & Senior Grade in Drawing</h3>
-                <p>Karnataka State Grade Exam</p>
+                <h3>Nexthon-2025 Winner</h3>
+                <p>Member of the winning team 'Luminous' at 'Nexthon-2025', a 24-hour hackathon organized by Shree Devi Institute of Technology, Mangaluru</p>
             </div>
             <div class="award-item" data-aos="fade-left" data-aos-delay="200">
                 <h3>Junior Grade in Talavadya Exam</h3>
@@ -429,7 +510,21 @@
                 <p>National Cadet Corps, India</p>
             </div>
         </div>
-        <p class="final-paragraph" data-aos="fade-up" data-aos-delay="400">Driven by a passion for rapid innovation and collaborative problem-solving, I am actively seeking to apply my skills in competitive <strong>hackathon environments</strong> to build impactful technology. 🚀</p>
+        <h3 style="margin-top: 50px; text-align: center; color: var(--on-surface-color);" data-aos="fade-up">Extracurricular Activities</h3>
+        <div class="awards-list">
+            <div class="award-item" data-aos="fade-left">
+                <h3>Joint Cultural Secretary</h3>
+                <p>Currently serving as the Joint Cultural Secretary of 'Bhoomika Kala Sangha' — VCET's Co-curricular & Extra Curricular Cell</p>
+            </div>
+            <div class="award-item" data-aos="fade-left" data-aos-delay="100">
+                <h3>IEEE VCET Student Branch - Student Activities Committee</h3>
+                <p>Active member organizing and hosting several events for VCET as well as external college students</p>
+            </div>
+            <div class="award-item" data-aos="fade-left" data-aos-delay="200">
+                <h3>Center of Research Excellency (CoRE)</h3>
+                <p>Active member of VCET's research-oriented, peer-run tech club; worked on projects, organized and hosted several intra-college events</p>
+            </div>
+        </div>
     </section>
 
     <section id="contact">
@@ -467,7 +562,7 @@
                         <span>+91 9060159605</span>
                     </div>
                     <div class="social-links">
-                        <a href="https://github.com" target="_blank" aria-label="GitHub Profile">
+                        <a href="https://github.com/hegdesrinivasm" target="_blank" aria-label="GitHub Profile">
                             <i class="fa-brands fa-github"></i>
                         </a>
                         <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn Profile">
