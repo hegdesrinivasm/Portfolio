@@ -31,6 +31,7 @@
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
+            <a href="#blog">Blog</a>
             <a href="#awards">Awards</a>
             <a href="#contact">Contact</a>
         </div>
@@ -87,27 +88,53 @@
     <section id="projects" class="container">
         <h2 data-aos="fade-up">Projects & Internships</h2>
         <div class="projects-grid">
-            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-repo="hegdesrinivasm/DADS">
                 <h3>DADS - Dysfluency Analysis and Detection System</h3>
                 <p>Built a system that detects and classifies stutter disfluency into five classes, empowering speech pathologists with AI-driven diagnostic tools. Real impact, real solutions.</p>
+                <div class="github-stats">
+                    <div class="project-loading">Loading GitHub stats...</div>
+                </div>
                 <a href="https://github.com/hegdesrinivasm/DADS" target="_blank" aria-label="View DADS project on GitHub">
                     <i class="fa-brands fa-github"></i> View on GitHub <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
-            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-repo="hegdesrinivasm/Articulation">
                 <h3>ADAS - Articulation Dysfluency Analysis System</h3>
                 <p>Developed an articulation error analysis system delivering comprehensive syllable-level reports. Precision diagnostics for speech therapists who need actionable insights.</p>
+                <div class="github-stats">
+                    <div class="project-loading">Loading GitHub stats...</div>
+                </div>
                 <a href="https://github.com/hegdesrinivasm/Articulation" target="_blank" aria-label="View ADAS project on GitHub">
                     <i class="fa-brands fa-github"></i> View on GitHub <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
-            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300" data-repo="hegdesrinivasm/BePractical">
                 <h3>AI Placement Predictor</h3>
                 <p>Created a web application that predicts placement outcomes based on certifications, skills, projects, and internships. Data-driven career guidance at scale.</p>
+                <div class="github-stats">
+                    <div class="project-loading">Loading GitHub stats...</div>
+                </div>
                 <a href="https://github.com/hegdesrinivasm/BePractical" target="_blank" aria-label="View AI Placement Predictor project on GitHub">
                     <i class="fa-brands fa-github"></i> View on GitHub <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
+        </div>
+    </section>
+
+    <section id="blog" class="container">
+        <h2 data-aos="fade-up">Latest Thoughts</h2>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: var(--spacing-xl); font-size: 1.125rem;" data-aos="fade-up">
+            Sharing my perspectives on technology, AI, and innovation.
+        </p>
+        <div class="blog-grid">
+            <div class="blog-loading" id="blog-loading">
+                <i class="fa-solid fa-spinner fa-spin"></i> Loading latest posts...
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: var(--spacing-xl);" data-aos="fade-up">
+            <a href="https://thoughts-srinivas.blogspot.com/" target="_blank" class="blog-visit-link">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Full Blog
+            </a>
         </div>
     </section>
 
@@ -153,11 +180,14 @@
             <h2 data-aos="fade-up">Contact Me</h2>
             <div class="contact-wrapper">
                 <div class="contact-form" data-aos="fade-right">
+                    <div class="success-message" id="success-message">
+                        <i class="fa-solid fa-circle-check"></i> Message sent successfully! I'll get back to you soon.
+                    </div>
                     <form id="main-contact-form">
                         <input id="name" name="name" type="text" placeholder="Your Name" required />
                         <input id="email" name="email" type="email" placeholder="Your Email" required />
                         <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-                        <button type="submit">Send Message</button>
+                        <button type="submit" id="submit-btn">Send Message</button>
                     </form>
                 </div>
                 <div class="contact-details" data-aos="fade-left">
