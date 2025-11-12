@@ -13,16 +13,21 @@
     
     <!-- Graphik Font -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/graphik@5.0.0/index.css">
+    
+    <!-- Anton Font for Hero Name -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
     <style>
-        /* --- Global Styles & Material 3 Expressive Customizations --- */
+        /* --- Global Styles & Bold Black/Red Theme --- */
         :root {
-            --primary-color: #0071e3; /* Apple Blue */
-            --surface-color: #ffffff;
-            --secondary-surface-color: #f5f5f7;
-            --on-surface-color: #1d1d1f;
-            --text-light: #6e6e73;
-            --border-color: #d2d2d7;
+            --primary-color: #dc0000; /* Bold Red */
+            --surface-color: #0a0a0a; /* Deep Black */
+            --secondary-surface-color: #1a1a1a; /* Slightly lighter black */
+            --on-surface-color: #ffffff; /* White text */
+            --text-light: #b0b0b0; /* Light gray for secondary text */
+            --border-color: #2a2a2a;
             --radius-large: 24px;
             --radius-medium: 18px;
             --radius-small: 12px;
@@ -69,10 +74,10 @@
             position: sticky;
             top: 0;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid var(--primary-color);
             z-index: 1000;
             height: 52px;
         }
@@ -125,21 +130,19 @@
         }
 
         #hero h1 {
+            font-family: 'Anton', sans-serif;
             font-size: 4.2rem;
-            font-weight: 700;
+            font-weight: 400;
             margin: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         #hero .sub-headline {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: var(--text-light);
             margin: 10px 0 20px 0;
-        }
-
-        #hero .tagline {
-            font-size: 1.9rem;
-            font-weight: 600;
-            color: var(--on-surface-color);
+            font-weight: 400;
         }
         
         .hero-image {
@@ -177,16 +180,18 @@
         }
 
         .skill-card {
-            background: rgba(255,255,255,0.6);
+            background: var(--secondary-surface-color);
             padding: 30px;
             border-radius: var(--radius-small);
             text-align: center;
             border: 1px solid var(--border-color);
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .skill-card:hover {
-            background: #fff;
+            background: var(--surface-color);
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
         }
 
         .skill-card i {
@@ -290,8 +295,9 @@
 
         .contact-details {
             padding: 30px;
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--primary-color);
             border-radius: var(--radius-small);
+            background: var(--secondary-surface-color);
         }
 
         .contact-details div {
@@ -418,8 +424,7 @@
         <div class="hero-wrapper">
             <div class="hero-text" data-aos="fade-right">
                 <h1 class="headline">Srinivas Hegde M</h1>
-                <p class="sub-headline">Third Year AIML Student, VCET Puttur</p>
-                <p class="tagline">Passionate about Applied Machine Learning & Deep Learning ✨</p>
+                <p class="sub-headline">Third year AIML student passionate about applied machine learning and deep learning</p>
             </div>
             <div class="hero-image" data-aos="fade-left">
                 <img src="P1000635.jpg" alt="A placeholder image for Srinivas Hegde M's profile picture.">
@@ -430,10 +435,10 @@
     <section id="about" class="container">
         <div data-aos="fade-up">
             <h2>About Me</h2>
-            <p>A third year AIML student heavily interested in <strong>applied machine learning and deep learning</strong>. Currently pursuing Bachelor of Engineering in Artificial Intelligence and Machine Learning at Vivekananda College of Engineering & Technology, Puttur (graduating 2027).</p>
-            <p>My academic journey is built on a solid foundation in programming with languages like <strong>Python, C, C++, and Java</strong>. I work extensively with frameworks and libraries including <strong>TensorFlow, PyTorch, Keras, Scikit-Learn</strong>, and tools like <strong>Numpy and Matplotlib</strong> for data analysis and visualization. I continuously hone my ability to write clean, efficient, and logical code.</p>
-            <p>I am driven by a curiosity to understand the mechanics behind intelligent systems and am committed to translating theoretical knowledge into practical, real-world applications. My projects focus on solving real-world problems in areas like speech pathology and placement prediction using AI/ML techniques.</p>
-            <p>Beyond technical skills, I bring strong <strong>problem-solving abilities, leadership, teamwork, and communication</strong> skills. I am an active member of several college organizations including IEEE VCET Student Branch and Center of Research Excellency (CoRE), where I organize and host various events. Currently, I serve as the <strong>Joint Cultural Secretary of Bhoomika Kala Sangha</strong> — VCET's Co-curricular & Extra Curricular Cell.</p>
+            <p>I am an AIML engineer in the making, currently pursuing my Bachelor of Engineering in Artificial Intelligence and Machine Learning at Vivekananda College of Engineering & Technology, Puttur. I don't just study AI—I build it, break it, and make it work for real-world problems.</p>
+            <p>I code in Python, C, C++, and Java. My toolkit includes TensorFlow, PyTorch, Keras, Scikit-Learn, Numpy, and Matplotlib. I don't write code for the sake of it—I write it to solve problems that matter. From speech pathology systems to placement prediction algorithms, my work is about creating impact, not just completing assignments.</p>
+            <p>I am not satisfied with understanding theory alone. I push myself to translate concepts into applications that work. I tackle challenges head-on and thrive in environments that demand innovation and execution under pressure.</p>
+            <p>Leadership comes naturally to me. As Joint Cultural Secretary of Bhoomika Kala Sangha and an active member of IEEE VCET Student Branch and CoRE, I don't just participate—I lead, organize, and deliver. I am a problem-solver, a team player, and someone who gets things done.</p>
         </div>
     </section>
 
@@ -443,22 +448,22 @@
             <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
                 <i class="fa-brands fa-python"></i>
                 <h3>Programming Languages</h3>
-                <p>Python, C, C++, Java, Dart - Building robust applications and solving complex problems.</p>
+                <p>Python, C, C++, Java, Dart. I write code that works, scales, and solves problems that matter.</p>
             </div>
             <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
                 <i class="fa-solid fa-brain"></i>
                 <h3>ML/AI Frameworks</h3>
-                <p>TensorFlow, PyTorch, Keras, Scikit-Learn - Developing and deploying machine learning models.</p>
+                <p>TensorFlow, PyTorch, Keras, Scikit-Learn. From training models to deployment—I own the pipeline.</p>
             </div>
             <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
                 <i class="fa-solid fa-mobile-screen"></i>
                 <h3>Mobile Development</h3>
-                <p>Flutter & Dart - Creating cross-platform mobile applications with modern UI/UX.</p>
+                <p>Flutter & Dart. Cross-platform apps with performance and design that doesn't compromise.</p>
             </div>
             <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
                 <i class="fa-solid fa-chart-line"></i>
                 <h3>Data Analysis & Tools</h3>
-                <p>Numpy, Matplotlib, Git, GitHub, VS Code, PyCharm - Analyzing data and managing projects efficiently.</p>
+                <p>Numpy, Matplotlib, Git, GitHub, VS Code, PyCharm. My tools for turning raw data into insights.</p>
             </div>
         </div>
     </section>
@@ -468,21 +473,21 @@
         <div class="projects-grid">
             <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                 <h3>DADS - Dysfluency Analysis and Detection System</h3>
-                <p>A system which detects and classifies stutter disfluency into five different classes to assist speech pathologists in diagnosis and treatment planning.</p>
+                <p>Built a system that detects and classifies stutter disfluency into five classes, empowering speech pathologists with AI-driven diagnostic tools. Real impact, real solutions.</p>
                 <a href="https://github.com/hegdesrinivasm/DADS" target="_blank" aria-label="View DADS project on GitHub">
                     <i class="fa-brands fa-github"></i> View on GitHub <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
             <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                 <h3>ADAS - Articulation Dysfluency Analysis System</h3>
-                <p>A system which analyzes articulation errors by giving a comprehensive report on syllable error, helping speech therapists provide targeted interventions.</p>
+                <p>Developed an articulation error analysis system delivering comprehensive syllable-level reports. Precision diagnostics for speech therapists who need actionable insights.</p>
                 <a href="https://github.com/hegdesrinivasm/Articulation" target="_blank" aria-label="View ADAS project on GitHub">
                     <i class="fa-brands fa-github"></i> View on GitHub <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
             <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                 <h3>AI Placement Predictor</h3>
-                <p>A web app which gives candidates a comprehensive placement prediction based on their course certifications, skills known, projects, and internships completed.</p>
+                <p>Created a web application that predicts placement outcomes based on certifications, skills, projects, and internships. Data-driven career guidance at scale.</p>
                 <a href="https://github.com/hegdesrinivasm/BePractical" target="_blank" aria-label="View AI Placement Predictor project on GitHub">
                     <i class="fa-brands fa-github"></i> View on GitHub <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -498,8 +503,8 @@
                 <p>Completed 'Supervised Machine Learning: Regression and Classification' course as a part of the 'Machine Learning Specialization' on Coursera by Stanford University and DeepLearning.AI</p>
             </div>
             <div class="award-item" data-aos="fade-left" data-aos-delay="100">
-                <h3>Nexthon-2025 Winner</h3>
-                <p>Member of the winning team 'Luminous' at 'Nexthon-2025', a 24-hour hackathon organized by Shree Devi Institute of Technology, Mangaluru</p>
+                <h3>DevHack Winner</h3>
+                <p>Member of the winning team 'Luminous' at DevHack, a 36-hour national level hackathon organized as a part of 'DevHost-2025' by Sahyadri College of Engineering and Management, Mangaluru</p>
             </div>
             <div class="award-item" data-aos="fade-left" data-aos-delay="200">
                 <h3>Junior Grade in Talavadya Exam</h3>
